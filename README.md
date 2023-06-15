@@ -130,7 +130,16 @@ The site configuration file is found at `content/config.edn`, this file looks as
  :hide-future-posts?           true
  :klipse                       {}
  :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}
- :debug?                       false}
+ :debug?                       false
+ :twitter-acct                 nil 
+                               ;; change this to "your-twitter-handle" to 
+                               ;; enable auto twitter banners
+ :mastodon                     {:host nil ;; change this to the domain name 
+                                          ;; of your mastodon host to generate 
+                                          ;; a me-link
+                                :acct nil ;; change this to your mastodon 
+                                          ;; account name to generate a me-link
+                                }}
 ```
 
 For information about each key please see the ["Configuration"](http://cryogenweb.org/docs/configuration.html) portion of the Cryogen documentation site.
@@ -213,7 +222,6 @@ More information on deployment can be found [here](http://cryogenweb.org/docs/de
 #### https://github.com/greywolve/cryogen-markdown-external
 
 A Clojure library to provide Markdown rendering to the cryogen-core compiler by using an external command/program, such as pandoc.
-
 
 
 ## Some Sites Made With Cryogen
