@@ -33,6 +33,25 @@
     content="{{site-url}}{{blog-prefix}}{% if post.image.path %}{{post.image.path}}{% else %}{{post.image}}{% endif %}" />
 {% endif %}
 <meta name="twitter:creator" content="{{twitter-acct}}" />
+<!-- Google's 'Rich Snippets' crap. Because everyone has to reinvent the wheel. -->
+<script type="application/ld+json">
+ {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{post.title}}",
+    {% if post.image %}
+      "image": [
+      "{{site-url}}{{blog-prefix}}{% if post.image.path %}{{post.image.path}}{% else %}{{post.image}}{% endif %}"
+      ],
+    {% endif %}
+    "datePublished": "{{post.date}}",
+    "author": [{
+        "@type": "Person",
+        "name": "{{post.author}}",
+        "url": "{{site-url}}{{blog-prefix}}/authors-output/{{post.author}}/"
+    }]
+}
+</script>
 {% endblock %}
 {% block content %}
 <div id="post">
